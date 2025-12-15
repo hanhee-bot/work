@@ -1,9 +1,147 @@
-		*{
- margin : 0;
- padding: 0;
- box-sizing: border-box;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff;
+    cursor: auto;
 }
 
-@media screen and (max-width: 704px) {
-    
+/* 전체 화면 */
+.work-stage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
+#header-text {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    min-width: 200px;
+    max-width: 80vw;
+
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+
+    color: rgba(0,0,0,0.8);
+    background: transparent;
+    outline: none;
+    border: none;
+
+    cursor: text;
+    white-space: nowrap;
+}
+
+
+/* 중앙 스택 */
+.stack {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ========================= */
+/* 이미지 공통 */
+/* ========================= */
+
+.sheet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 350px;
+    opacity: 0.6;
+
+    transform-origin: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: opacity 0.25s ease, box-shadow 0.25s ease;
+
+    /* ✅ 기본 커서 */
+    cursor: url('111.png') 16 16, grab;
+}
+
+/* 클릭 후 활성화 */
+.sheet.active {
+    opacity: 1;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+/* 🔑 드래그 중 커서 */
+.sheet.dragging {
+    cursor: url('222.png') 16 16, grabbing;
+}
+
+
+/* 개별 회전 */
+.s1  { transform: translate(-60%, -45%) rotate(-6deg); }
+.s2  { transform: translate(-42%, -55%) rotate(5deg); }
+.s3  { transform: translate(-50%, -50%) rotate(-2deg); }
+.s4  { transform: translate(-55%, -40%) rotate(7deg); }
+.s5  { transform: translate(-45%, -60%) rotate(-5deg); }
+
+.s6  { transform: translate(-62%, -52%) rotate(4deg); }
+.s7  { transform: translate(-38%, -48%) rotate(-6deg); }
+.s8  { transform: translate(-50%, -62%) rotate(3deg); }
+.s9  { transform: translate(-58%, -44%) rotate(-7deg); }
+.s10 { transform: translate(-40%, -56%) rotate(6deg); }
+
+.s11 { transform: translate(-65%, -50%) rotate(-8deg); }
+.s12 { transform: translate(-35%, -52%) rotate(8deg); }
+.s13 { transform: translate(-48%, -42%) rotate(-4deg); }
+.s14 { transform: translate(-52%, -60%) rotate(5deg); }
+.s15 { transform: translate(-44%, -46%) rotate(2deg); }
+
+.s16 { transform: translate(-63%, -57%) rotate(-6deg); }
+.s17 { transform: translate(-37%, -43%) rotate(6deg); }
+.s18 { transform: translate(-50%, -58%) rotate(-3deg); }
+.s19 { transform: translate(-57%, -41%) rotate(7deg); }
+.s20 { transform: translate(-43%, -59%) rotate(-5deg); }
+.s21 { transform: translate(-50%, -50%) rotate(-5deg); }
+.s22 { transform: translate(-42%, -58%) rotate(5deg); }
+.s23 { transform: translate(-50%, -50%) rotate(-2deg); }
+.s24 { transform: translate(-54%, -46%) rotate(2deg); }
+.s25 { transform: translate(-49%, -46%) rotate(0deg); }
+.s26 { transform: translate(-54%, -48%) rotate(-5deg); }
+.s27 { transform: translate(-50%, -50%) rotate(5deg); }
+.s28 { transform: translate(-35%, -52%) rotate(-2deg); }
+.s29 { transform: translate(-44%, -46%) rotate(2deg); }
+.s30 { transform: translate(-35%, -52%) rotate(0deg); }
+.s31 { transform: translate(-43%, -59%) rotate(-5deg); }
+.s32 { transform: translate(-62%, -52%) rotate(5deg); }
+.s33 { transform: translate(-50%, -50%) rotate(-2deg); }
+.s34 { transform: translate(-44%, -46%) rotate(2deg); }
+.s35 { transform: translate(-50%, -58%) rotate(0deg); }
+.s36 { transform: translate(-50%, -50%) rotate(-5deg); }
+.s37 { transform: translate(-43%, -59%) rotate(5deg); }
+.s38 { transform: translate(-50%, -50%) rotate(-2deg); }
+/* ========================= */
+/* 뒤로 가기 버튼 */
+/* ========================= */
+
+.back-btn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 100;
+    display: block;
+}
+
+.back-btn img {
+    width: 100px;          /* 조금 더 커도 OK */
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.back-btn:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
